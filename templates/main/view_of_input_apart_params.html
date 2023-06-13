@@ -1,0 +1,12 @@
+{% extends 'main/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+    <div class="d-grid gap-2 col-6 mx-auto" style="margin-top: 100px">
+        <form action="{% url 'calculate_apartment_price' %}" method="post">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <button class="btn btn-outline-light" type="submit" style="margin-top: 10px">Подтвердить</button>
+        </form>
+    </div>
+{% endblock %}
