@@ -1,0 +1,16 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+    <div class="d-grid gap-2 col-6 mx-auto p-2" style="margin-top: 100px;">
+        <p class="text-break" style="text-align: center; font-size: 18px">Сайт дает возможность получить первичную
+            оценку стоимости Вашей недвижимости.<br>
+            Алгоритм оценки, в среднем, дает оценку, которая отличается от реальной рыночной стоимости на 10-20%<br>
+            Однако в случае с редкими квартирами оценка может представляться совершенно непригодной.
+        </p>
+        <button onclick="document.location='http://127.0.0.1:8000/'" type="button" class="btn btn-outline-light"
+                style="--bs-btn-padding-y: 10px; --bs-btn-padding-x: 10px; --bs-btn-font-size: 20px; width: 50%; margin-left: 25%">
+            На главную
+        </button>
+    </div>
+
+{% endblock %}

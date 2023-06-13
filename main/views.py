@@ -20,3 +20,7 @@ def calculate_apartment_price(request):
     data = pd.DataFrame(data=d, index=[0])
     cost = int(rf.predict(data)[0]) // 100
     return render(request, 'main/calculated_price.html', context={'res': str(cost) + '00'})
+
+
+def about_view(request):
+    return render(request, 'main/about_page.html')
