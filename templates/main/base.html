@@ -12,16 +12,29 @@
 
 {% block content %}
     <div class="d-grid gap-2 col-6 mx-auto" style="margin-top: 100px">
-        <button onclick="document.location='http://127.0.0.1:8000/registration/'" type="button"
-                class="btn btn-outline-light"
-                style="--bs-btn-padding-y: 10px; --bs-btn-padding-x: 10px; --bs-btn-font-size: 20px;">
-            Войти
-        </button>
-        <button onclick="document.location='http://127.0.0.1:8000/registration/'" type="button"
-                class="btn btn-outline-light"
-                style="--bs-btn-padding-y: 10px; --bs-btn-padding-x: 10px; --bs-btn-font-size: 20px;">
-            Регистрация
-        </button>
+        {% if not is_authenticated %}
+            <button onclick="document.location='http://127.0.0.1:8000/registration/login/'" type="button"
+                    class="btn btn-outline-light"
+                    style="--bs-btn-padding-y: 10px; --bs-btn-padding-x: 10px; --bs-btn-font-size: 20px;">
+                Войти
+            </button>
+            <button onclick="document.location='http://127.0.0.1:8000/registration/'" type="button"
+                    class="btn btn-outline-light"
+                    style="--bs-btn-padding-y: 10px; --bs-btn-padding-x: 10px; --bs-btn-font-size: 20px;">
+                Регистрация
+            </button>
+        {% else %}
+            <button onclick="document.location='http://127.0.0.1:8000/registration/profile/'" type="button"
+                    class="btn btn-outline-light"
+                    style="--bs-btn-padding-y: 10px; --bs-btn-padding-x: 10px; --bs-btn-font-size: 20px;">
+                Мой профиль
+            </button>
+            <button onclick="document.location='http://127.0.0.1:8000/registration/logout/'" type="button"
+                    class="btn btn-outline-light"
+                    style="--bs-btn-padding-y: 10px; --bs-btn-padding-x: 10px; --bs-btn-font-size: 20px;">
+                Выйти
+            </button>
+        {% endif %}
         <button onclick="document.location='http://127.0.0.1:8000/input_params/'" type="button"
                 class="btn btn-outline-light"
                 style="--bs-btn-padding-y: 10px; --bs-btn-padding-x: 10px; --bs-btn-font-size: 20px;">

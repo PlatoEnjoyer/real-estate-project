@@ -1,7 +1,9 @@
+from django.contrib.auth import logout
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.views import LoginView
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
+from .models import UsersApartments
 
 from .forms import RegisterForm
 
@@ -30,3 +32,14 @@ class LoginForm(LoginView):
 
     def get_success_url(self):
         return reverse_lazy('home')
+
+
+def logout_user(request):
+    logout(request)
+    return redirect('login')
+
+
+def profile(request):
+    user_appartements = UsersApartments.objects.filter(user=request.user.username)
+    return render(request, 'registration/profile.html',
+                  context={'username': request.user.username, 'appartements': user_appartements})

@@ -1,4 +1,8 @@
 {% extends 'main/base.html' %}
 {% block content %}
     <h3 class="text-center">Примерная оценка Вашей недвижимости: {{ res }} рублей</h3>
+    <button onclick="document.location='http://127.0.0.1:8000/'" type="button" class="btn btn-outline-light"
+            style="--bs-btn-padding-y: 10px; --bs-btn-padding-x: 10px; --bs-btn-font-size: 20px; width: 50%; margin-left: 25%">
+        На главную
+    </button>
 {% endblock %}
