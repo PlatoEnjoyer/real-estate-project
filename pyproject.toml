@@ -14,6 +14,8 @@ matplotlib = "^3.7.1"
 sklearn = "^0.0.post5"
 scikit-learn = "^1.2.2"
 crispy-bootstrap4 = "^2022.1"
+beautifulsoup4 = "^4.12.2"
+cianparser = "^0.4.11"
 
 
 [build-system]
