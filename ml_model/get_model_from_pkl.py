@@ -1,3 +1,5 @@
 import joblib
+import pathlib
 
-rf = joblib.load('/home/timur/HM_course/HM3/HomeWorkProject/ml_model/joblib_model.pkl')
+dir_path = pathlib.Path.cwd()
+rf = joblib.load(f'{dir_path}/ml_model/short_joblib_model.pkl')
