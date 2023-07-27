@@ -1,0 +1,14 @@
+{% extends 'main/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <form method="post" class="form-group" style="width: 50%; margin-left: 25%">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <button type="submit" class="btn btn-success">
+            Подтвердить
+        </button>
+        <br>
+        {{ error }}
+    </form>
+{% endblock %}

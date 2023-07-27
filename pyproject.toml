@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "homeworkproject"
+version = "0.1.0"
+description = ""
+authors = ["PlatoEnoyer <depp9270@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+django = "^4.2.2"
+jupyter = "^1.0.0"
+pandas = "^2.0.2"
+matplotlib = "^3.7.1"
+sklearn = "^0.0.post5"
+scikit-learn = "^1.2.2"
+crispy-bootstrap4 = "^2022.1"
+beautifulsoup4 = "^4.12.2"
+cianparser = "^0.4.11"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

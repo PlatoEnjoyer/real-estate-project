@@ -1,0 +1,42 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+    <div class="d-grid gap-2 col-6 mx-auto" style="margin-top: 100px">
+        <h2 class="text-center">{{ username }}, ваши последние запросы:</h2>
+        <div class="accordion" id="accordionExample">
+            {% for apps in appartements %}
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne" aria-expanded="true"
+                                aria-controls="collapse{{ apps.id }}">
+                            Квартира {{ apps.id }}
+                        </button>
+                    </h2>
+                    <div id="collapse{{ apps.id }}" class="accordion-collapse collapse show"
+                         data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            Регион: {{ apps.region }}
+                            <br>
+                            Этаж: {{ apps.level }}
+                            <br>
+                            Этажей: {{ apps.levels }}
+                            <br>
+                            Комнат: {{ apps.rooms }}
+                            <br>
+                            Площадь: {{ apps.area }} кв. м.
+                            <br>
+                            Площадь кухни: {{ apps.kitchen_area }} кв. м.
+                            <br>
+                            Спрогнозированная цена: {{ apps.cost }} рублей
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <button onclick="document.location='http://127.0.0.1:8000/'" type="button" class="btn btn-outline-light"
+                style="--bs-btn-padding-y: 10px; --bs-btn-padding-x: 10px; --bs-btn-font-size: 20px; width: 50%; margin-left: 25%">
+            На главную
+        </button>
+    </div>
+{% endblock %}
